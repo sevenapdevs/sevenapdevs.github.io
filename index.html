@@ -116,7 +116,7 @@
             <button id="reset-btn">Reset</button>
         </div>
 
-        <div class="card display-none" id="eplst-container">
+        <div class="card" id="eplst-container">
             <ul id="eplst"></ul>
         </div>
 
@@ -131,6 +131,9 @@
         let childsCounter = 1;
         let childsChildsMap = new Map();
         const STORAGE_KEY = "epstein_tree";
+        if (!localStorage.getItem(STORAGE_KEY)){
+            document.getElementById('eplst-container').classList.add('display-none');
+        }
 
         function init(){
             document.addEventListener('click', addNewChild);
@@ -205,7 +208,8 @@
 
         function resetList(e){
             e.stopPropagation();
-
+			
+            document.getElementById('eplst-container').classList.add('display-none');
             let epList = document.getElementById('eplst');
             epList.innerHTML = "";
 
