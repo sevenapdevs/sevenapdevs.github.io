@@ -116,7 +116,7 @@
             <button id="reset-btn">Reset</button>
         </div>
 
-        <div class="card">
+        <div class="card display-none" id="eplst-container">
             <ul id="eplst"></ul>
         </div>
 
@@ -155,6 +155,7 @@
         function addNewChild(e){
             document.getElementById('click-note')
                 .classList.add('display-none');
+            document.getElementById('eplst-container').classList.remove('display-none');
 
             let epLst = document.getElementById('eplst');
             let newChild = createNode("Epstein " + childsCounter, getRandomColor());
