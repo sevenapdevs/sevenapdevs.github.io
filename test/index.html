@@ -4,9 +4,15 @@
 <title>Test123</title>
 </head>
 <body>
-<video autoplay muted>
+<video id="vid" muted playsinline autoplay>
   <source src="https://herrw.de/rr.mp4" type="video/mp4">
-  Dein Browser unterstützt das Video-Tag nicht.
 </video>
+
+<script>
+  const v = document.getElementById("vid");
+  v.play().catch(() => {
+    console.log("Autoplay blockiert");
+  });
+</script>
 </body>
 </html>
