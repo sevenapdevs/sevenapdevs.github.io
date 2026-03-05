@@ -1,6 +1,13 @@
 {
-  "Karl'us Mei": {
-    "id": 1,
+   1: {
+    "name": "Karlus Mei",
     "role": "m.r"
+  }
+}
+
+{
+  2: {
+    "name": "Luisus Mučić",
+    "role": "p"
   }
 }
