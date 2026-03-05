@@ -1,4 +1,6 @@
 {
-  id: "1"
-  name: "Karl"
+  "Karl'us Mei": {
+    "id": 1
+    "role": "m.r"
+  }
 }
