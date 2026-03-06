@@ -1,13 +1,15 @@
 {
-   "1": {
-    "name": "Karlus Mei",
-    "role": "m.r"
+  {
+    "1": {
+      "name": "Karlus Mei",
+      "role": "m.r"
+    }
   }
-}
-
-{
-  "2": {
-    "name": "Luisus Mučić",
-    "role": "p"
+  
+  {
+    "2": {
+      "name": "Luisus Mučić",
+      "role": "p"
+    }
   }
 }
