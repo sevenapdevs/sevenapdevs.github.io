@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Karl Long Mei">
+    <meta name="description" content="A simple calculator built with HTML, CSS, and JavaScript.">
+    <title>Calculator</title>
+
+    <style>
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+
+        #calculator-container {
+            display: flex;
+            justify-content: center;
+        }
+
+        #calculator {
+            display: inline-block;
+            padding: 20px;
+            border: 2px solid #000;
+            border-radius: 10px;
+            background-color: #f0f0f0;
+        }
+
+        input, button {
+            font-size: 1.5em;
+            padding: 10px;
+            margin: 5px;
+        }
+
+        #btn-zero {
+            width: 135px;
+        }
+
+        #btn-clear {
+            background-color: #ff6666;
+            color: white;
+            width: 208px;
+        }
+
+        button {
+            width: 60px;
+            height: 60px;
+        }
+
+        input {
+            width: 260px;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculator</h1>
+    </header>
+    <div id="calculator-container">
+        <div id="calculator">
+            <input type="text" class="display" disabled>
+            <br>
+            <button class="btn" id="btn-clear">C</button>
+            <button class="btn btn-operator">+</button>
+            <br>
+            <button class="btn btn-digit">7</button>
+            <button class="btn btn-digit">8</button>
+            <button class="btn btn-digit">9</button>
+            <button class="btn btn-operator">-</button>
+            <br>
+            <button class="btn btn-digit">4</button>
+            <button class="btn btn-digit">5</button>
+            <button class="btn btn-digit">6</button>
+            <button class="btn btn-operator">*</button>
+            <br>
+            <button class="btn btn-digit">1</button>
+            <button class="btn btn-digit">2</button>
+            <button class="btn btn-digit">3</button>
+            <button class="btn btn-operator">/</button>
+            <br>
+            <button class="btn btn-digit" id="btn-zero">0</button>
+            <button class="btn btn-dot">.</button>
+            <button class="btn btn-equals">=</button>
+        </div>
+    </div>
+</body>
+<script>
+    let reset;
+    function init() {
+        // Buttons event listeners (except equals)
+        const digitsButtons = document.querySelectorAll('.btn-digit, .btn-operator, .btn-dot');
+        for (let i = 0; i < digitsButtons.length; i++) {
+            digitsButtons[i].addEventListener('click', () => {
+                const display = document.querySelector('.display');
+                let displayValue = display.value;
+                if (reset) {
+                    display.value = '';
+                    reset = false;
+                }
+                display.value += digitsButtons[i].textContent;
+            });
+        }
+
+        // Equals button event listener
+        const equalsButton = document.querySelector('.btn-equals');
+        equalsButton.addEventListener('click', () => {
+            const display = document.querySelector('.display');
+            try {
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = "Error";
+            }
+            reset = true;
+        });
+
+        // Clear button event listener
+        const clearButton = document.querySelector('#btn-clear');
+        clearButton.addEventListener('click', () => {
+            const display = document.querySelector('.display');
+            display.value = '';
+        });
+    }
+
+    window.addEventListener('load', init);
+
+</script>
+</html>
