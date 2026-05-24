@@ -18,6 +18,9 @@ body {
 /* =========================
    HERO SECTION
 ========================= */
+main {
+    width: 100vw;
+}
 
 #hero {
     position: relative;
