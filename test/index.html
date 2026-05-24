@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Test123</title>
+<meta charset="UTF-8">
+<title>Test Site</title>
 </head>
 <body>
 <video id="vid" muted playsinline autoplay>
@@ -11,7 +12,7 @@
 <script>
   const v = document.getElementById("vid");
   v.play().catch(() => {
-    console.log("Autoplay blockiert");
+    console.log("Autoplay blocked");
   });
 </script>
 </body>
