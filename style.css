@@ -16,47 +16,69 @@ body {
 }
 
 /* =========================
-   HERO BACKGROUND
+   HERO SECTION
 ========================= */
 
 #hero {
+    position: relative;
+    min-height: 72vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 8% 80px;
+    background: url("https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=2000") center/cover no-repeat;
+    overflow: hidden;
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.35);
+}
+
+#hero::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 70vh;
-    background: 
-        linear-gradient(rgba(15,23,42,0.75), rgba(15,23,42,0.9)),
-        url("https://images.unsplash.com/photo-1508780709619-79562169bc64?q=80&w=2000");
-    background-size: cover;
-    background-position: center;
-    z-index: -1;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15,23,42,0.55), rgba(15,23,42,0.95));
+    mix-blend-mode: multiply;
+    z-index: 1;
 }
 
 .hero-message {
     position: relative;
-    min-height: 60vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    z-index: 2;
     max-width: 760px;
-    padding: 120px 0 80px;
-    color: white;
+    padding: 40px 0;
+}
+
+.hero-message::before {
+    content: "Featured work";
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    padding: 0.65rem 1.2rem;
+    border-radius: 999px;
+    color: #d3e8ff;
+    background: rgba(74, 125, 252, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.8rem;
 }
 
 .hero-message h2 {
-    font-size: clamp(2.75rem, 5vw, 4.5rem);
-    line-height: 1.05;
-    margin-bottom: 1rem;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 1.02;
+    margin-bottom: 1.1rem;
     letter-spacing: -0.04em;
+    max-width: 14ch;
 }
 
 .hero-message p {
     font-size: 1.1rem;
     max-width: 680px;
-    opacity: 0.95;
-    line-height: 1.75;
+    opacity: 0.92;
+    line-height: 1.8;
+    color: #eef5ff;
 }
+
+/* add attention to the existing site styling with an elevated hero intro */
 
 /* =========================
    HEADER
