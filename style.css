@@ -33,6 +33,31 @@ body {
     z-index: -1;
 }
 
+.hero-message {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 760px;
+    padding: 120px 0 80px;
+    color: white;
+}
+
+.hero-message h2 {
+    font-size: clamp(2.75rem, 5vw, 4.5rem);
+    line-height: 1.05;
+    margin-bottom: 1rem;
+    letter-spacing: -0.04em;
+}
+
+.hero-message p {
+    font-size: 1.1rem;
+    max-width: 680px;
+    opacity: 0.95;
+    line-height: 1.75;
+}
+
 /* =========================
    HEADER
 ========================= */
